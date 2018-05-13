@@ -1,0 +1,85 @@
+%*************************************************************%
+%************************* START MAIN ************************%
+%*************************************************************%
+
+\documentclass[a4paper]{class/thesis-michele}
+
+% Include mouse-hover tags and math commands
+\input{support/tags}
+\input{support/math}
+
+%-------------------------------------------------------------%
+%------------------- USER-SPECIFIC VARIABLES -----------------%
+%-------------------------------------------------------------%
+
+% Title and cover page variables
+\title{Aerobraking Guidance, Navigation and Control}
+\subtitle{A Comparison of State Variables Performance in Propagation}
+\affiliation{Delft University of Technology}
+\author{Michele Facchinelli}
+
+% PDF hypertext variables
+\subject{MSc Thesis}
+\keywords{aerobraking, guidance, navigation, control, robust, UKF, USM7, USM6, USMEM}
+
+% Images
+\coverimage{class/cover.pdf}
+\coverlogo{class/logo_white.pdf}
+\titlelogo{class/logo_black.pdf}
+
+%-------------------------------------------------------------%
+%--------------------------- DOCUMENT ------------------------%
+%-------------------------------------------------------------%
+
+\begin{document}
+
+% Set front matter style
+\pagestyle{frontmatter}
+
+% Add cover and title pages
+\CoverPage
+\TitlePage
+
+% Add table of contents, figures and tables
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Add list of symbols and abbreviations
+\input{support/symbols}
+\input{support/abbreviations}
+
+% Set main matter style
+\pagestyle{mainmatter}
+\hypersetup{
+     citecolor=titleGray,
+     linkcolor=titleGray,
+     urlcolor=titleGray
+}
+
+%-------------------------------------------------------------%
+%--------------------------- CHAPTERS ------------------------%
+%-------------------------------------------------------------%
+
+% Include chapters
+\input{chapters/chapter}
+
+% Include bibliography
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliography}
+
+%-------------------------------------------------------------%
+%-------------------------- APPENDICES -----------------------%
+%-------------------------------------------------------------%
+
+% Include appendices
+\appendix
+\input{appendices/appendix}
+
+\end{document}
+
+%*************************************************************%
+%************************** END MAIN *************************%
+%*************************************************************%

@@ -1,0 +1,145 @@
+%*************************************************************%
+%************************ MATH SYMBOLS ***********************%
+%*************************************************************%
+
+% Rename variables
+\let\vaccent=\v % rename builtin command \v{} to \vaccent{}
+\let\underdot=\d % rename built-in command \d{} to \underdot{}
+\let\divsymb=\div % rename builtin command \div to \divsymb
+\let\baraccent=\= % rename builtin command \= to \baraccent
+\let\frameObject=\framed % rename builtin command \framed to \frameObject
+\let\sunsym=\sun % rename builtin command \sun to \sunsym
+
+% Frames
+\newcommand{\framefont}[1]{\ensuremath{\mathcal{#1}}}
+
+% Mathematics
+\newcommand{\f}[2]{#1\left( #2 \right)} % for function
+\newcommand{\order}[1]{\f{\mathcal{O}}{#1}} % for big O notation
+\renewcommand{\v}[1]{\boldsymbol{\mathrm{#1}}} % for vectors
+\newcommand{\uv}[1]{\ensuremath{\v{\hat{#1}}}} % for unit vector
+\newcommand{\bv}[2]{\uv{#1}_\framefont{#2}} % for basis vector
+\newcommand{\abs}[1]{\left| #1 \right|} % for absolute value
+\newcommand{\vabs}[1]{\left|\left| #1 \right|\right|} % for magnitude of vector
+\newcommand{\modulo}[2]{\mathrm{mod}_{#2} \left( #1 \right)} % modulo operator
+\newcommand{\avg}[1]{\left< #1 \right>} % for average
+\newcommand{\dif}{\mathop{}\!\mathrm{d}} % for derivative
+\renewcommand{\b}[1]{\mathbf{#1}} % for math bold
+\renewcommand{\d}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}} % for derivatives
+\newcommand{\dd}[2]{\frac{\mathrm{d}^2 #1}{\mathrm{d} #2^2}} % for double derivatives
+\newcommand{\dc}[3]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}} % for custom derivatives
+\newcommand{\dpar}[3]{\f{{#1}^{(#3)}}{#2}} % for derivatives with parenthesis
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % for partial derivatives
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} % for double partial derivatives
+\newcommand{\pdc}[3]{\left( \frac{\partial #1}{\partial #2} \right)_{#3}} % for thermodynamic partial derivatives
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right| \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+\newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right| #2 \left| #3 \vphantom{#1#2} \right>} % for Dirac matrix elements
+\newcommand{\grad}[1]{\v{\nabla} #1} % for gradient
+\renewcommand{\div}[1]{\v{\nabla} \cdot #1} % for divergence
+\newcommand{\curl}[1]{\v{\nabla} \times #1} % for curl
+\renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
+\newcommand{\eqdef}{\={\triangle}}
+\newcommand{\slfrac}[2]{\left.#1\middle/#2\right.} % slanted fraction
+
+% Vectors
+\newcommand{\vthree}[3]{
+	\left( \begin{array}{c} #1 \\ #2 \\ #3 \end{array} \right)
+}
+\newcommand{\vtwo}[2]{
+	\left( \begin{array}{c} #1 \\ #2 \end{array} \right)
+}
+
+\newcommand{\cartpos}{\vthree{x}{y}{z}}
+\newcommand{\cartvel}{\vthree{\dot{x}}{\dot{y}}{\dot{z}}}
+\newcommand{\sphepos}{\vthree{\delta}{\tau}{r}}
+\newcommand{\sphevel}{\vthree{\gamma}{\chi}{V}}
+
+% Quaternions
+\newcommand{\quaternion}{
+	\left( \begin{array}{c} \v{\varepsilon} \\ \eta \end{array} \right)
+}
+\newcommand{\quaterniondot}{
+	\left( \begin{array}{c} \dot{\v{\varepsilon}} \\ \dot{\eta} \end{array} \right)
+}
+\newcommand{\quaternionNorm}{
+	\left( \begin{array}{c} \bar{\v{\varepsilon}} \\ \bar{\eta} \end{array} \right)
+}
+\newcommand{\quaterniondotNorm}{
+	\left( \begin{array}{c} \dot{\bar{\v{\varepsilon}}} \\ \dot{\bar{\eta}} \end{array} \right)
+}
+
+% Kalman filter
+\newcommand{\est}[1]{\hat{#1}} % estimate
+\newcommand{\apri}[1]{\est{\v{x}}_{#1}^{-}} % a-priori
+\newcommand{\apost}[1]{\est{\v{x}}_{#1}} % a-posteriori
+\newcommand{\aug}[1]{#1^\mathrm{a}} % augmented
+\newcommand{\sigp}[3]{\v{\mathcal{X}}_{#1,#2}^{#3}} % sigma point
+\newcommand{\sigpm}[2]{\v{\mathcal{Z}}_{#1,#2}} % measurement sigma point
+
+% Acceleration
+\newcommand{\acc}[1]{\v{a}_\text{#1}} % generic acceleration
+\newcommand{\acomp}[2]{a_{\bv{#1}{#2}}} % generic acceleration component
+
+\newcommand{\acart}[1]{\ddot{\v{r}}_\text{#1}} % cartesian acceleration
+\newcommand{\acartcomp}[2]{\ddot{r}_{\bv{#1}{#2}}} % cartesian acceleration component
+
+\newcommand{\dvcomp}[2]{\Delta V_{\bv{#1}{#2}}} % Delta V component
+\renewcommand{\framed}[2]{\left. #1 \right|_\framefont{#2}} % new frame definition
+
+% Moment
+\newcommand{\moment}[1]{\v{M}_{#1}} % moment
+
+% Attitude and rotations
+\newcommand{\rotMatrix}[3]{\v{R}_{\bv{#1}{#2}}\left( #3 \right)}
+\newcommand{\skewMatrix}[1]{#1^\mathrm{S}}%{\v{\tilde{#1}}}%{\f{\v{\Sigma}}{#1}}
+\newcommand{\trans}[2]{\framefont{#2}\leftarrow\framefont{#1}}
+\newcommand{\transMatrix}[2]{\v{C}_\framefont{#2}^\framefont{#1}}
+\newcommand{\transpose}[1]{#1^\mathrm{T}}
+\newcommand{\rx}[1]{
+	\left[ \begin{array}{ccc}
+		1 & 0 & 0 \\
+		0 & \cos{#1} & \sin{#1} \\
+		0 & -\sin{#1} & \cos{#1} \\
+	\end{array} \right]
+}
+\newcommand{\ry}[1]{
+	\left[ \begin{array}{ccc}
+		\cos{#1} & 0 & -\sin{#1} \\
+		0 & 1 & 0 \\
+		\sin{#1} & 0 & \cos{#1} \\
+	\end{array} \right]
+}
+\newcommand{\rz}[1]{
+	\left[ \begin{array}{ccc}
+		\cos{#1} & \sin{#1} & 0 \\
+		-\sin{#1} & \cos{#1} & 0 \\
+		0 & 0 & 1 \\
+	\end{array} \right]
+}
+
+% Operators
+\newcommand{\arctantwo}[2]{\mathrm{arctan}_2 \left( #1, #2 \right)} % atan2
+\newcommand{\arccostwo}[2]{\mathrm{arccos}_2 \left( #1, #2 \right)} % acos2
+
+% Astronomical symbols
+\renewcommand{\sun}{\ensuremath{{\mathsmaller\astrosun}}} % new sun symbol
+\newcommand{\moon}{\leftmoon} % moon symbol
+\newcommand{\titan}{\rightmoon} % moon symbol
+
+% Gas parameters
+\newcommand{\avogadro}{\ensuremath{N_A}}
+\newcommand{\mach}{\ensuremath{M}}
+\newcommand{\reynolds}{\ensuremath{Re}}
+\newcommand{\knudsen}{\ensuremath{Kn}}
+\newcommand{\stanton}{\ensuremath{St}}
+\newcommand{\prandtl}{\ensuremath{Pr}}
+
+% Other
+\newcommand{\shadow}[1]{{#1}_s}
+\newcommand{\opt}{{\mathsmaller\circledast}} % optimal value
+\newcommand{\post}{\prime} % optimal value
+\newcommand{\BoxVec}{\mathsmaller\blacksquare} % filled box
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}} % chemical formula
+\newcommand{\multilineHeader}[3]{{\multirow{#1}{*}{$\begin{array}{c} \textbf{#2} \\ \textbf{#3} \end{array}$}}} % tabular multi-line header

@@ -1,0 +1,93 @@
+%*************************************************************%
+%********************** MOUSE-HOVER TAGS *********************%
+%*************************************************************%
+
+% Command to cite frame as X-frame and add mouse-hover tag
+\newcommand{\framename}{}
+\newcommand{\citeframe}[1]{%
+	% Get name
+	\ifthenelse{\equal{#1}{I}}{%
+		\renewcommand{\framename}{Inertial Planetocentric}}{%
+	\ifthenelse{\equal{#1}{O}}{%
+		\renewcommand{\framename}{Rotating Planetocentric}}{%
+	\ifthenelse{\equal{#1}{V}}{%
+		\renewcommand{\framename}{Vertical}}{%
+	\ifthenelse{\equal{#1}{T}}{%
+		\renewcommand{\framename}{Body-fixed}}{%
+	}}}}%
+	% Print name
+	\pdftooltip{\framefont{#1}-frame}{\framename\ Reference Frame}%
+}
+
+% Command to cite frame as F_X and add mouse-hover tag
+\newcommand{\citefframe}[1]{%
+	% Get name
+	\ifthenelse{\equal{#1}{I}}{%
+		\renewcommand{\framename}{Inertial Planetocentric}}{%
+	\ifthenelse{\equal{#1}{O}}{%
+		\renewcommand{\framename}{Rotating Planetocentric}}{%
+	\ifthenelse{\equal{#1}{V}}{%
+		\renewcommand{\framename}{Vertical}}{%
+	\ifthenelse{\equal{#1}{T}}{%
+		\renewcommand{\framename}{Body-fixed}}{%
+	}}}}%
+	% Print name
+	\pdftooltip{\framefont{F_{#1}}}{\framename\ Reference Frame}%
+}
+
+% Command to add mouse-hover tags to abbreviations
+\newcommand{\abbrname}{}
+\newcommand{\abbr}[1]{%
+	% Get name
+	%A
+	
+	%B
+	
+	%C
+	
+	%D
+	
+	%E
+	\ifthenelse{\equal{#1}{ESA}}{\renewcommand{\abbrname}{European Space Agency}}{%
+	%F
+	
+	%G
+	
+	%H
+	
+	%I
+	
+	%J
+	\ifthenelse{\equal{#1}{JPL}}{\renewcommand{\abbrname}{Jet Propulsion Laboratory}}{%
+	%K
+	
+	%L
+	\ifthenelse{\equal{#1}{LaRC}}{\renewcommand{\abbrname}{Langley Research Center}}{%
+	
+	%M
+	
+	%N
+	\ifthenelse{\equal{#1}{NASA}}{\renewcommand{\abbrname}{National Aeronautics and Space Administration}}{%
+	
+	%O
+	
+	%P
+	
+	%R
+	
+	\ifthenelse{\equal{#1}{RK4}}{\renewcommand{\abbrname}{Runge-Kutta Fourth-order Integration}}{%
+	
+	%S
+	
+	%T
+	\ifthenelse{\equal{#1}{Tudat}}{\renewcommand{\abbrname}{TU Delft Astrodynamics Toolbox}}{%
+	\ifthenelse{\equal{#1}{TU Delft}}{\renewcommand{\abbrname}{Delft University of Technology}}{%
+	%U
+	
+	%V
+	
+	%W
+	}}}}}}}%
+	% Print name
+	\pdftooltip{#1}{\abbrname}%
+}
