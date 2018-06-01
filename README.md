@@ -5,9 +5,9 @@ Hi, and welcome to the README of the templateThesis repository. In this file, I 
 ## Usage
 
 To copy this template on your computer you have three main ways:
-	- you can [download](https://github.com/mfacchinelli/templateThesis/archive/master.zip) this repository as a `.zip` file (also, you can click on 'Clone or Download')
-	- you can open this repository in the GitHub Desktop app, by clicking on 'Clone or Download'
-	- or, you can clone it via `git`, by using:
+- you can [download](https://github.com/mfacchinelli/templateThesis/archive/master.zip) this repository as a `.zip` file (also, you can click on 'Clone or Download')
+- you can open this repository in the GitHub Desktop app, by clicking on 'Clone or Download'
+- or, you can clone it via `git`, by using:
 	```
 	cd ~/template # or whichever other directory you want
 	git clone https://github.com/mfacchinelli/templateThesis
