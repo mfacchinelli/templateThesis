@@ -118,7 +118,7 @@
 	\begin{tabular}{lll}
 		Student number: & XXXXXXX \\
 		Project duration: & \multicolumn{2}{l}{\formatdate{19}{3}{2018} -- \formatdate{11}{10}{2018}} \\
-		Thesis committee: & Dr.\ Ir.\ P.\ Professor, & TU Delft, supervisor
+		Thesis committee: & Dr.\ P.\ Professor, & TU Delft, supervisor
 	\end{tabular}
 	
 	\bigskip

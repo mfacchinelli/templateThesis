@@ -12,7 +12,7 @@
 		\renewcommand{\framename}{Rotating Planetocentric}}{%
 	\ifthenelse{\equal{#1}{V}}{%
 		\renewcommand{\framename}{Vertical}}{%
-	\ifthenelse{\equal{#1}{T}}{%
+	\ifthenelse{\equal{#1}{B}}{%
 		\renewcommand{\framename}{Body-fixed}}{%
 	}}}}%
 	% Print name
@@ -28,7 +28,7 @@
 		\renewcommand{\framename}{Rotating Planetocentric}}{%
 	\ifthenelse{\equal{#1}{V}}{%
 		\renewcommand{\framename}{Vertical}}{%
-	\ifthenelse{\equal{#1}{T}}{%
+	\ifthenelse{\equal{#1}{B}}{%
 		\renewcommand{\framename}{Body-fixed}}{%
 	}}}}%
 	% Print name
@@ -40,52 +40,33 @@
 \newcommand{\abbr}[1]{%
 	% Get name
 	%A
-	
 	%B
-	
 	%C
-	
 	%D
-	
 	%E
 	\ifthenelse{\equal{#1}{ESA}}{\renewcommand{\abbrname}{European Space Agency}}{%
 	%F
-	
 	%G
-	
 	%H
-	
 	%I
-	
 	%J
 	\ifthenelse{\equal{#1}{JPL}}{\renewcommand{\abbrname}{Jet Propulsion Laboratory}}{%
 	%K
-	
 	%L
 	\ifthenelse{\equal{#1}{LaRC}}{\renewcommand{\abbrname}{Langley Research Center}}{%
-	
 	%M
-	
 	%N
 	\ifthenelse{\equal{#1}{NASA}}{\renewcommand{\abbrname}{National Aeronautics and Space Administration}}{%
-	
 	%O
-	
 	%P
-	
 	%R
-	
 	\ifthenelse{\equal{#1}{RK4}}{\renewcommand{\abbrname}{Runge-Kutta Fourth-order Integration}}{%
-	
 	%S
-	
 	%T
 	\ifthenelse{\equal{#1}{Tudat}}{\renewcommand{\abbrname}{TU Delft Astrodynamics Toolbox}}{%
 	\ifthenelse{\equal{#1}{TU Delft}}{\renewcommand{\abbrname}{Delft University of Technology}}{%
 	%U
-	
 	%V
-	
 	%W
 	}}}}}}}%
 	% Print name
