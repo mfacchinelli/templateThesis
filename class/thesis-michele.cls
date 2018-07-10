@@ -152,7 +152,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{courier}
 
-% Figures, Tables, Equations and Lists
+% Figures, tables, equations and lists
 \RequirePackage{array}
 \RequirePackage{booktabs} % Allows for usage of top-, mid- and bottomrule
 \RequirePackage[labelfont=bf,
@@ -249,10 +249,13 @@
 
 % Units
 \RequirePackage{siunitx} % Allows for consistent SI units
-\sisetup{detect-all,
-		 range-units=single,
-		 list-units=single,
-		 retain-unity-mantissa=false}
+\sisetup
+{
+	detect-all,
+	range-units=single,
+	list-units=single,
+	retain-unity-mantissa=false
+}
 \DeclareSIUnit\arcmin{arcmin}
 \DeclareSIUnit\arcsec{arcsec}
 \DeclareSIUnit\atmosphere{atm}

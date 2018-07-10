@@ -32,11 +32,13 @@ You can find out for yourself the remaining commands by having a look at this fi
 
 ### Mouse-Hover Tags
 
-This feature is definitely my favorite :heart:. What it does is to show the expansion of an abbreviation when the reader hovers his mouse over the abbreviation. Note that this feature only works with Adobe Reader (well, at least it does not work with Preview, if you have a Mac). Also, it only works on electronic versions of the document :wink:. 
+This feature is definitely my favorite :blush:. What it does is to show the expansion of an abbreviation when the reader hovers his mouse over the abbreviation. Note that this feature only works with Adobe Reader (well, at least it does not work with Preview, if you have a Mac). Also, it only works on electronic versions of the document :wink:. 
 
-To use these tags, you need to use the `\abbr{}` command. Inside the curly brackets you insert the abbreviation, and the command selects automatically the expansion to show. Note however, that the abbreviations need to be manually input in the `support/tags.tex` file, and do not load directly from the list of abbreviations (`support/abbreviations.text`). 
+To use these tags, you need to use the `\abbr{}` command. Inside the curly brackets you insert the abbreviation, and the command selects automatically the expansion to show. Note however, that the abbreviations need to be manually input in the `support/tags.tex` file, and do not load directly from the list of abbreviations (`support/abbreviations.tex`). 
 
 Two other commands are available and have a similar purpose as the `\abbr{}` command. These are `\citeframe{}` and `\citefframe{}`. If you use reference frames a lot in your thesis, they will be very handy. The first command refers to a reference frame by printing 'X-frame' (where X is the symbol used to refer to the frame), and it is called by simply typing `X` as input for the `\citeframe{}` command. The second one, on the other hand, prints the frame in the format 'F<sub>X</sub>'. In this way, you can alternate between the two methods, such that there is some variety in the text. Also for these two commands, when the reader hovers his mouse over 'X-frame' or 'F<sub>X</sub>', she/he will see something like 'Inertial Planetocentric Reference Frame' (if that is the name of the X-frame). 
+
+Note that if the abbreviation you type as an input to any of the above commands is not part of the abbreviations listed in the `support/tags.tex` file, no exception is thrown. So be careful when writing the abbreviation. 
 
 ### Title and Cover Pages
 
