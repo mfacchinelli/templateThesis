@@ -28,6 +28,10 @@
 {
 	\def\@affiliation{#1}
 }
+\newcommand*\studentNumber[1]
+{
+	\def\@studentNumber{#1}
+}
 \newcommand*\subject[1]
 {
 	\def\@subject{#1}
@@ -58,20 +62,20 @@
 \newcommand*{\CoverPage}
 {
 
-\hypersetup{urlcolor=titleGray}
+\hypersetup{urlcolor=darkGray}
 
 \begingroup
 \thispagestyle{empty}
 \BgThispage
 \hbox % Horizontal box
 {
-	\parbox[b]{0.75\textwidth} % Paragraph box which restricts text to less than the width of the page
+	\parbox[b]{0.7\textwidth} % Paragraph box which restricts text to less than the width of the page
 	{
-		\vspace{5cm} % Adjust to need
+		\vspace{3.5cm} % Adjust to need
 		
-		{\noindent\huge{\textcolor{frontTextColor}{\bfseries \@title}} \\[0.3\baselineskip] \Large{\textcolor{frontTextColor}{\@subtitle}}} \\[4\baselineskip] % Title
-		{\large \textcolor{frontTextColor}{\textit{\@affiliation}}}\\[4\baselineskip] % Affiliation
-		{\Large \textcolor{frontTextColor}{\textsc{\@author}}} % Author
+		{\noindent{\fontsize{30}{34}\selectfont\textcolor{frontTextColor}{\bfseries \@title}} \\[0.3\baselineskip] \LARGE{\textcolor{frontTextColor}{\@subtitle}}} \\[4\baselineskip] % Title
+		{\Large \textcolor{frontTextColor}{\textit{\@affiliation}}}\\[4\baselineskip] % Affiliation
+		{\LARGE \textcolor{frontTextColor}{\textsc{\@author}}} % Author
 		
 		\vspace{0.55\textheight} % Whitespace between blocks
 	}
@@ -96,7 +100,7 @@
 \newcommand*{\TitlePage}
 {
 
-\hypersetup{urlcolor=titleGray}
+\hypersetup{urlcolor=darkGray}
 
 \intentionallyBlank
 \pagebreak
@@ -106,7 +110,7 @@
 
 \vspace{2.5cm}
 \begin{center}
-	{\Huge{\bfseries \@title} \\[\baselineskip] \huge{\@subtitle}} \\[3\baselineskip]
+	{{\fontsize{30}{34}\selectfont\bfseries \@title} \\[\baselineskip] \huge{\@subtitle}} \\[3\baselineskip]
 	by \\[3\baselineskip]
 	\Large{\textsc{\@author}} \\[2\baselineskip]
 	\normalsize to obtain the degree of Master of Science \\
@@ -116,7 +120,7 @@
 	\vspace{\fill}
 
 	\begin{tabular}{lll}
-		Student number: & XXXXXXX \\
+		Student number: & \@studentNumber \\
 		Project duration: & \multicolumn{2}{l}{\formatdate{19}{3}{2018} -- \formatdate{11}{10}{2018}} \\
 		Thesis committee: & Dr.\ P.\ Professor, & TU Delft, supervisor
 	\end{tabular}
@@ -295,10 +299,10 @@
 \definecolor{hl-red}{RGB}{255,102,102}
 
 % General colors
-\definecolor{frontTextColor}{gray}{1}
-\definecolor{lightGray}{gray}{0.93}
-\definecolor{lineGray}{gray}{0.5}
-\definecolor{titleGray}{gray}{0.35}
+\definecolor{frontTextColor}{RGB}{255,253,251}
+\definecolor{lightGray}{RGB}{141,142,146}
+\definecolor{midGray}{RGB}{128,128,128}
+\definecolor{darkGray}{RGB}{115,115,117}
 
 % Counters
 \newcounter{req-sc}\setcounter{req-sc}{1} % SC requirement count
@@ -314,69 +318,70 @@
 
 % Part
 \titleformat{\part}[display]
-			{\flushright\Huge\bfseries}
+			{\fontsize{30}{34}\selectfont\color{white}\flushright\bfseries}
 			{\thepart}
 			{0pt}
-			{\sc\titlerule\vspace{1ex}}
+			{\thispagestyle{empty}\sc\titlerule\vspace{1ex}#1\BgThispage}
 
 % Chapter
 \newcommand{\hc}{\hspace{20pt}}
-\colorlet{shadecolor}{titleGray}
+\colorlet{shadecolor}{darkGray}
 \titleformat{\chapter}[display]
-			{\color{white}\flushright\begin{shaded*}}
-			{\Huge\thechapter}
+			{\fontsize{25}{28}\selectfont\color{white}\flushright\begin{shaded*}}
+			{\thechapter}
 			{1pt}
-			{\huge\bfseries#1\hc\end{shaded*}}
+			{\bf#1\hc\end{shaded*}}
 \titleformat{name=\chapter,numberless}[display]
-			{\color{white}\flushright\begin{shaded*}}
+			{\fontsize{25}{28}\selectfont\color{white}\flushright\begin{shaded*}}
 			{}
 			{-15pt}
-			{\huge\bfseries#1\end{shaded*}}
-\titlespacing{\chapter}{0pt}{0pt}{0pt}
+			{\bf#1\end{shaded*}}
+\titlespacing{\chapter}{0pt}{-5pt}{-5pt}
 
 % Section 
 \newcommand{\hs}{\hspace{10pt}}
 \titleformat{\section}[hang]
-			{\Large}
-			{\thesection\hs\textcolor{lineGray}{|}\hs}
+			{\LARGE}
+			{\thesection\hs\textcolor{midGray}{|}\hs}
 			{0pt}
 			{\bfseries#1}
-\titlespacing{\section}{0pt}{10pt}{5pt}
+\titlespacing{\section}{0pt}{17.5pt}{5pt}
 
 % Subsection 
 \newcommand{\hsu}{\hspace{7.5pt}}
 \titleformat{\subsection}[hang]
-			{\large}
-			{\thesubsection\hsu\textcolor{lineGray}{|}\hsu}
+			{\Large}
+			{\thesubsection\hsu\textcolor{midGray}{|}\hsu}
 			{0pt}
 			{#1}
-\titlespacing{\subsection}{0pt}{7.5pt}{5pt}
+\titlespacing{\subsection}{0pt}{15pt}{5pt}
 
 % Subsubsection
 \titleformat{\subsubsection}[hang]
-			{\normalsize\color{titleGray}}
+			{\large\color{darkGray}}
 			{}
 			{0pt}
-			{\bf #1}
-%\titlespacing{\subsubsection}{0pt}{7.5pt}{5pt}
+			{\bf#1}
+\titlespacing{\subsubsection}{0pt}{12.5pt}{5pt}
 
 % Paragraph
 \titleformat{\paragraph}[runin]
-			{\normalsize\color{titleGray}}
+			{\normalsize\color{darkGray}}
 			{}
 			{0pt}
-			{\sc #1}
+			{\sc#1}
+\titlespacing{\paragraph}{0pt}{10pt}{5pt}
 
 % Enumerate
-\renewcommand{\labelitemi}{\color{titleGray}$\circ$}
-\renewcommand{\labelitemii}{\color{titleGray}$\bullet$}
+\renewcommand{\labelitemi}{\color{darkGray}$\circ$}
+\renewcommand{\labelitemii}{\color{darkGray}$\bullet$}
 
 % Footnote
 \renewcommand*{\thefootnote}{(\arabic{footnote})}
 %\makeatletter
 %\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
 %\makeatother
-\newcommand{\tableRef}[1]{\textsuperscript{\textcolor{titleGray}{(#1)}}}
+\newcommand{\tableRef}[1]{\textsuperscript{\textcolor{darkGray}{(#1)}}}
 
 % Numbering
 \numberwithin{equation}{chapter}
