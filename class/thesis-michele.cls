@@ -115,13 +115,13 @@
 	\Large{\textsc{\@author}} \\[2\baselineskip]
 	\normalsize to obtain the degree of Master of Science \\
 	at the \@affiliation, \\
-	to be defended publicly on \dayofweekname{11}{10}{2018}, \formatdate{11}{10}{2018} at \formattime{10}{0}{0}.
+	to be defended publicly on \dayofweekname{11}{10}{2018}, \formatdate{11}{10}{2018} at \formattime{9}{30}{0}.
 
 	\vspace{\fill}
 
 	\begin{tabular}{lll}
 		Student number: & \@studentNumber \\
-		Project duration: & \multicolumn{2}{l}{\formatdate{19}{3}{2018} -- \formatdate{11}{10}{2018}} \\
+		Project duration: & \multicolumn{2}{l}{\formatdate{19}{3}{2018} -- \formatdate{30}{11}{2018}} \\
 		Thesis committee: & Dr.\ P.\ Professor, & TU Delft, supervisor
 	\end{tabular}
 	
@@ -217,18 +217,18 @@
 \RequirePackage[pdftex,
 				colorlinks=true,
 				linkcolor=black,
-            	pagebackref=false,
-            	linktocpage=false,
-            	plainpages=true,
-            	bookmarksopen=true,
-            	bookmarksnumbered=true,
-            	pdfcreationdate={}]
-            	{hyperref} % Allows for interaction
+            		pagebackref=false,
+            		linktocpage=false,
+            		plainpages=true,
+            		bookmarksopen=true,
+            		bookmarksnumbered=true,
+            		pdfcreationdate={}]
+            		{hyperref} % Allows for interaction
 \RequirePackage{fancyhdr}
 \RequirePackage{framed} % Background to text
 \RequirePackage{mdframed} % Background to equations
 \RequirePackage{multicol} % Columns
-\RequirePackage{pdfcomment}
+\RequirePackage{pdfcomment} % PDF tags
 \RequirePackage[noindentafter,explicit]{titlesec}
 \RequirePackage{titletoc}
 
@@ -300,9 +300,9 @@
 
 % General colors
 \definecolor{frontTextColor}{RGB}{255,253,251}
-\definecolor{lightGray}{RGB}{141,142,146}
+\definecolor{lightGray}{RGB}{142,142,142}
 \definecolor{midGray}{RGB}{128,128,128}
-\definecolor{darkGray}{RGB}{115,115,117}
+\definecolor{darkGray}{RGB}{115,115,115}
 
 % Counters
 \newcounter{req-sc}\setcounter{req-sc}{1} % SC requirement count
